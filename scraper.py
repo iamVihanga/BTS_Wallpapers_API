@@ -17,6 +17,8 @@ class Scraper():
         for elem in categories:
             item = {
                 'categoryName': elem.find('p.title', first=True).text.strip(),
+                'categoryThumbnail': elem.find('img.thumbnail', first=True).attrs['src'],
+                'wallpapersCount': elem.find('span.overlay', first=True).text.strip(),
                 'categorySlug': elem.xpath('//a/@href')[0][1:]
             }
             categoryList.append(item)
