@@ -16,11 +16,7 @@ class Scraper():
 
         for elem in categories:
             item = {
-<<<<<<< HEAD
                 'categoryName': elem.find('p.title', first=True).text.strip(),
-=======
-                'categoryName': elem.find('p.title', first=True).text.strip()
->>>>>>> 42a55324a306ae49fd6831fe7b1a1f57e399e143
                 'categorySlug': elem.xpath('//a/@href')
             }
             categoryList.append(item)
