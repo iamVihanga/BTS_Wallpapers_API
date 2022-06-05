@@ -25,4 +25,16 @@ class Scraper():
 
     def getWallpapers(self, slug):
         url = self.baseURL + slug
-        return url
+        res = self.s.get(url)
+
+        wallpapersList = []
+
+        wallpapers = res.html.find('img.wimg')
+
+        for elem in wallpapers:
+            wall = self.baseURL + elem.attrs["src"][1:]
+            wallpapersList.append(wall)
+
+        return wallpapersList
+
+
