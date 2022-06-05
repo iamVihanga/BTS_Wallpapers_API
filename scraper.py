@@ -2,7 +2,7 @@ from requests_html import HTMLSession
 
 class Scraper():
     def __init__(self):
-        self.baseURL = 'https://wallpapercave.com/'
+        self.baseURL = 'https://wallpapercave.com'
 
         # Session
         self.s = HTMLSession()
@@ -22,3 +22,7 @@ class Scraper():
             categoryList.append(item)
 
         return categoryList
+
+    def getWallpapers(self, slug):
+        url = self.baseURL + slug
+        return url

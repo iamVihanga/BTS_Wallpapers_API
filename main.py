@@ -13,3 +13,7 @@ async def getRoot():
 async def getCategories():
     return scraper.getCategories()
 
+
+@app.get('/categories/{slug}')
+async def getWallpapers(slug):
+    return scraper.getWallpapers(slug)
