@@ -2,7 +2,7 @@ from requests_html import HTMLSession
 
 class Scraper():
     def __init__(self):
-        self.baseURL = 'https://wallpapercave.com'
+        self.baseURL = 'https://wallpapercave.com
 
         # Session
         self.s = HTMLSession()
