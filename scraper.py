@@ -16,7 +16,8 @@ class Scraper():
 
         for elem in categories:
             item = {
-                'categoryName': elem.find('p.title', first=True).text.strip()
+                'categoryName': elem.find('p.title', first=True).text.strip(),
+                'categorySlug': elem.xpath('//a/@href')
             }
             categoryList.append(item)
 
