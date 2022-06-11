@@ -17,7 +17,7 @@ class Scraper():
 
         for elem in categories:
             item = {
-                'categoryId': f'category-{elem.xpath('//a/@href')[0][1:]}-{initialID}',
+                'categoryId': f"category-{elem.xpath('//a/@href')[0][1:]}-{initialID}",
                 'categoryName': elem.find('p.title', first=True).text.strip(),
                 'categoryThumbnail': elem.find('img.thumbnail', first=True).attrs['src'],
                 'wallpapersCount': elem.find('span.overlay', first=True).text.strip(),
@@ -39,7 +39,7 @@ class Scraper():
 
         for elem in wallpapers:
             item = {
-                'wallpaperId': f'wallpaper-{slug}-{initialID}',
+                'wallpaperId': f"wallpaper-{slug}-{initialID}",
                 'wallpaper': self.baseURL + elem.attrs["src"][1:]
             }
             wallpapersList.append(item)
